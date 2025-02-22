@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Shoe Store</h1>
+    <nav>
+        <button onclick="showSection('register')">Регистрация</button>
+        <button onclick="showSection('login')">Вход</button>
+        <button onclick="showSection('products')">Товары</button>
+        <button onclick="showSection('cart')">Корзина (<span id="cart-count">0</span>)</button>
+        <button onclick="showSection('orders')">Заказы</button>
+    </nav>
+</header>
+
+<main>
+    <!-- Форма регистрации -->
+    <section id="register" class="hidden">
+        <h2>Регистрация</h2>
+        <input type="text" id="register-name" placeholder="Имя">
+        <input type="email" id="register-email" placeholder="Email">
+        <input type="password" id="register-password" placeholder="Пароль">
+        <button onclick="register()">Зарегистрироваться</button>
+        <p id="register-message"></p>
+    </section>
+
+    <!-- Форма входа -->
+    <section id="login" class="hidden">
+        <h2>Вход</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Пароль">
+        <button onclick="login()">Войти</button>
+        <p id="login-message"></p>
+    </section>
+
+    <!-- Список товаров -->
+    <section id="products" class="hidden">
+        <h2>Товары</h2>
+        <div id="product-list"></div>
+    </section>
+
+    <!-- Корзина -->
+    <section id="cart" class="hidden">
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p>Общая сумма: <span id="cart-total">0</span> $</p>
+        <button onclick="placeOrder()">Оформить заказ</button>
+    </section>
+
+    <!-- История заказов -->
+    <section id="orders" class="hidden">
+        <h2>Ваши заказы</h2>
+        <div id="order-list"></div>
+    </section>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
